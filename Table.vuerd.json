@@ -1,0 +1,519 @@
+{
+  "canvas": {
+    "version": "2.2.11",
+    "width": 2000,
+    "height": 2000,
+    "scrollTop": -0.8333333002196431,
+    "scrollLeft": -0.6944444168497026,
+    "zoomLevel": 1,
+    "show": {
+      "tableComment": true,
+      "columnComment": true,
+      "columnDataType": true,
+      "columnDefault": true,
+      "columnAutoIncrement": false,
+      "columnPrimaryKey": true,
+      "columnUnique": false,
+      "columnNotNull": true,
+      "relationship": true
+    },
+    "database": "MySQL",
+    "databaseName": "",
+    "canvasType": "ERD",
+    "language": "GraphQL",
+    "tableCase": "pascalCase",
+    "columnCase": "camelCase",
+    "highlightTheme": "VS2015",
+    "bracketType": "none",
+    "setting": {
+      "relationshipDataTypeSync": true,
+      "relationshipOptimization": false,
+      "columnOrder": [
+        "columnName",
+        "columnDataType",
+        "columnNotNull",
+        "columnUnique",
+        "columnAutoIncrement",
+        "columnDefault",
+        "columnComment"
+      ]
+    },
+    "pluginSerializationMap": {}
+  },
+  "table": {
+    "tables": [
+      {
+        "name": "Meal",
+        "comment": "",
+        "columns": [
+          {
+            "name": "ID",
+            "comment": "",
+            "dataType": "INTEGER",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "2a5fe07d-2ee3-4515-b7f7-fb9a3c5183ad"
+          },
+          {
+            "name": "Meal_title",
+            "comment": "",
+            "dataType": "VARCHAR",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 64.6005859375,
+              "widthDefault": 60
+            },
+            "id": "90219061-3097-470e-95a3-de5de22532ea"
+          },
+          {
+            "name": "Meal_country",
+            "comment": "",
+            "dataType": "VARCHAR",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 80.0380859375,
+              "widthComment": 60,
+              "widthDataType": 64.6005859375,
+              "widthDefault": 60
+            },
+            "id": "c2bfe057-6e6b-4a6f-961e-2cf01078b334"
+          },
+          {
+            "name": "Meal_instructions",
+            "comment": "",
+            "dataType": "VARCHAR",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 103.15625,
+              "widthComment": 60,
+              "widthDataType": 64.6005859375,
+              "widthDefault": 60
+            },
+            "id": "2c2903de-65cf-4c1d-bb9c-373836f4e2f4"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 630.2801,
+          "top": 24.4468,
+          "zIndex": 250,
+          "widthName": 60,
+          "widthComment": 60
+        },
+        "visible": true,
+        "id": "580af3fa-4b8a-4935-9575-b21339ec30d2"
+      },
+      {
+        "name": "Ingredient",
+        "comment": "",
+        "columns": [
+          {
+            "name": "ID",
+            "comment": "",
+            "dataType": "INTEGER",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "10510371-22a8-459d-a446-b7501c888a88"
+          },
+          {
+            "name": "Ing_name",
+            "comment": "",
+            "dataType": "VARCHAR",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 64.6005859375,
+              "widthDefault": 60
+            },
+            "id": "073ca967-d1a6-4af9-bebb-e783998b76d7"
+          },
+          {
+            "name": "",
+            "comment": "",
+            "dataType": "",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "5681efae-fe15-4a75-b3dd-3dba021d9b82"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 628.4751,
+          "top": 315.6963,
+          "zIndex": 252,
+          "widthName": 60,
+          "widthComment": 60
+        },
+        "visible": true,
+        "id": "9b9657d1-21b6-45ac-a3a5-82505b4ed6e8"
+      },
+      {
+        "name": "QtyType",
+        "comment": "",
+        "columns": [
+          {
+            "name": "ID",
+            "comment": "",
+            "dataType": "INTEGER",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "571e6351-fad4-4ca2-ab00-55fa8a182362"
+          },
+          {
+            "name": "qty_title",
+            "comment": "",
+            "dataType": "VARCHAR",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 64.6005859375,
+              "widthDefault": 60
+            },
+            "id": "2bd7c364-661b-47e3-97f9-96b32f5696aa"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 631.2517,
+          "top": 188.8911,
+          "zIndex": 251,
+          "widthName": 60,
+          "widthComment": 60
+        },
+        "visible": true,
+        "id": "eaaa087a-d763-4b46-bbb4-f8cbea352887"
+      },
+      {
+        "name": "Meal_Ing_Ref",
+        "comment": "",
+        "columns": [
+          {
+            "name": "ID",
+            "comment": "",
+            "dataType": "INTEGER",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "ae5349e3-d522-4594-97a3-46338d2cdd72"
+          },
+          {
+            "name": "Meal_ID",
+            "comment": "",
+            "dataType": "INTEGER",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "553bd1a3-d8a9-4049-a3e5-2f4a32a508cd"
+          },
+          {
+            "name": "Qty_amount",
+            "comment": "",
+            "dataType": "INTEGER",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 72.814453125,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "4c8e4ff9-06b5-4914-b50c-959c68097b3f"
+          },
+          {
+            "name": "Qty_ID",
+            "comment": "",
+            "dataType": "INTEGER",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "6e31ae29-0cc4-4565-90a9-dc1f31d42aa9"
+          },
+          {
+            "name": "Ing_ID",
+            "comment": "",
+            "dataType": "INTEGER",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "9ca35dd3-b9ff-4227-9ce0-7fbd1148454f"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 12.4995,
+          "top": 21.5289,
+          "zIndex": 253,
+          "widthName": 82.93896484375,
+          "widthComment": 60
+        },
+        "visible": true,
+        "id": "2b446ad9-006c-4ea5-9930-273675063754"
+      }
+    ],
+    "indexes": []
+  },
+  "memo": {
+    "memos": []
+  },
+  "relationship": {
+    "relationships": [
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "580af3fa-4b8a-4935-9575-b21339ec30d2",
+          "columnIds": [
+            "2a5fe07d-2ee3-4515-b7f7-fb9a3c5183ad"
+          ],
+          "x": 630.2801,
+          "y": 99.9468,
+          "direction": "left"
+        },
+        "end": {
+          "tableId": "2b446ad9-006c-4ea5-9930-273675063754",
+          "columnIds": [
+            "553bd1a3-d8a9-4049-a3e5-2f4a32a508cd"
+          ],
+          "x": 372.313953125,
+          "y": 50.112233333333336,
+          "direction": "right"
+        },
+        "constraintName": "fk_meal_to_meal_ing_ref",
+        "visible": true,
+        "id": "d8443e15-7e87-429a-932c-a1bb53c2b4ef"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "9b9657d1-21b6-45ac-a3a5-82505b4ed6e8",
+          "columnIds": [
+            "10510371-22a8-459d-a446-b7501c888a88"
+          ],
+          "x": 628.4751,
+          "y": 380.9463,
+          "direction": "left"
+        },
+        "end": {
+          "tableId": "2b446ad9-006c-4ea5-9930-273675063754",
+          "columnIds": [
+            "9ca35dd3-b9ff-4227-9ce0-7fbd1148454f"
+          ],
+          "x": 372.313953125,
+          "y": 164.44556666666665,
+          "direction": "right"
+        },
+        "constraintName": "fk_ingredient_to_meal_ing_ref",
+        "visible": true,
+        "id": "992f2e0e-f3cd-4a6b-872e-740e3c6c26d7"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "eaaa087a-d763-4b46-bbb4-f8cbea352887",
+          "columnIds": [
+            "571e6351-fad4-4ca2-ab00-55fa8a182362"
+          ],
+          "x": 631.2517,
+          "y": 243.8911,
+          "direction": "left"
+        },
+        "end": {
+          "tableId": "2b446ad9-006c-4ea5-9930-273675063754",
+          "columnIds": [
+            "6e31ae29-0cc4-4565-90a9-dc1f31d42aa9"
+          ],
+          "x": 372.313953125,
+          "y": 107.2789,
+          "direction": "right"
+        },
+        "constraintName": "fk_qtytype_to_meal_ing_ref",
+        "visible": true,
+        "id": "50f4517d-937e-4c15-9ffd-6966d1f7074c"
+      }
+    ]
+  }
+}
