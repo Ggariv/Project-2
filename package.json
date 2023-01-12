@@ -1,0 +1,34 @@
+{
+  "name": "project-2",
+  "version": "1.0.0",
+  "description": "Everyone is always looking to try something new. At internet, you can search for new recipes all over the world and try to cook it by your own.\r However, as many food platforms offer their multiple dishes to the users, users would like to submit their own recipe to a platform so that other users would try new dishes from new sources.",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ggariv/Project-2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ggariv/Project-2/issues"
+  },
+  "homepage": "https://github.com/Ggariv/Project-2#readme",
+  "devDependencies": {
+    "jest": "^29.3.1"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "connect-session-sequelize": "^7.1.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "handlebars": "^4.7.7",
+    "inquirer": "^8.0.0",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.28.0"
+  }
+}
