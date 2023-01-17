@@ -1,10 +1,11 @@
 const User = require('./User');
+const RefTable = require('./RefTable');
+const Country = require('./Country');
 const Meal = require('./Meal');
 const Ingredient = require('./Ingredient');
 const Quantity = require('./Quantity');
-const RefTable = require('./RefTable');
-// const FavTable = require('./FavTable');
 
+// User <--> RefTable
 User.hasMany(RefTable, {
     foreignKey: 'user_id',
     });
@@ -13,50 +14,40 @@ RefTable.belongsTo(User, {
     foreignKey: 'user_id',
     })
 
-// User.hasMany(Meal, {
-//     foreignKey: 'user_id',
-//     });
-
-// RefTable.belongsTo(User, {
-//     foreignKey: 'user_id',
-//     })
-
-Meal.belongsTo(RefTable, {
-    foreignKey: 'meal_id',
-    onDelete: "cascade"
-    })
-
+// RefTable <--> Meal
 RefTable.hasMany(Meal, {
-    foreignKey: 'meal_id',
-    onDelete: "cascade"
+    foreignKey: 'meal_id'
     });
 
+Meal.belongsTo(RefTable, {
+    foreignKey: 'meal_id'
+    })
+
+// Meal <--> Country
+Meal.hasOne(Country, {
+    foreignKey: 'cty_id'
+    })
+
+Country.belongsTo(Meal, {
+    foreignKey: 'cty_id'
+    });
+
+// Meal <--> Ingredient
 Meal.hasMany(Ingredient, {
-    foreignKey: 'ing_id',
-    onDelete: "cascade"
+    foreignKey: 'ing_id'
     });
 
 Ingredient.belongsTo(Meal, {
-    foreignKey: 'ing_id',
-    onDelete: "cascade"
-    })
+    foreignKey: 'ing_id'
+    });
 
+// Ingredient  <--> Quantity
 Ingredient.hasOne(Quantity, {
-    foreignKey: 'qty_id',
-    onDelete: "cascade"
+    foreignKey: 'qty_id'
     });
 
 Quantity.belongsTo(Ingredient, {
-    foreignKey: 'qty_id',
-    onDelete: "cascade"
+    foreignKey: 'qty_id'
     });
 
-// User.hasOne(FavTable, {
-//     foreignKey: 'id',
-//     });
-
-// Meal.belongsTo(FavTable, {
-//     foreignKey: 'id',
-//     })
-
-module.exports = { User, Meal, Ingredient, Quantity, RefTable };
+module.exports = { User, Quantity, Ingredient, Country, Meal, RefTable };

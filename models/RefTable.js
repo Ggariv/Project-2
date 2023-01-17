@@ -19,6 +19,10 @@ RefTable.init(
                 key: 'id'
                 }
             },
+        qty_value: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+            },
         user_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
@@ -31,6 +35,7 @@ RefTable.init(
     {
         sequelize,
         freezeTableName: true,
+        timestamps: false,
         underscored: true,
         modelName: 'reftable'
     }

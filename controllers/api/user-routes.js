@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, RefTable } = require('../../models');
+const { User } = require('../../models');
 
 // GET all users
 router.get('/', (req, res) => {
@@ -20,12 +20,12 @@ router.get('/:id', (req, res) => {
         where: {
             id: req.params.id
             },
-        include: [
-            {
-                model: RefTable,
-                attributes: ['id', 'meal_id', 'qty_amount']
-            },
-            ]
+        // include: [
+        //     {
+        //         model: RefTable,
+        //         attributes: ['id', 'meal_id', 'qty_value']
+        //     },
+        //     ]
         })
     .then(dbUserData => {
         if (!dbUserData) {
@@ -69,12 +69,12 @@ router.post('/login', (req, res) => {
         })
     .then(dbUserData => {
         if (!dbUserData) {
-            res.status(400).json({ message: 'No user with that email address!' });
+            res.status(400).json({ message: 'Incorrect username or password!' });
             return;
             }
         const validPassword = dbUserData.checkPassword(req.body.password);
         if (!validPassword) {
-            res.status(400).json({ message: 'Incorrect password!' });
+            res.status(400).json({ message: 'Incorrect username or password!' });
             return;
             }
         req.session.save(() => {

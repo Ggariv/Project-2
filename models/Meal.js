@@ -15,9 +15,13 @@ Meal.init(
             type: DataTypes.STRING,
             allowNull: false
             },
-        meal_country: {
-            type: DataTypes.TEXT,
-            allowNull: false
+        cty_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: 'country',
+                key: 'id'
+                }
             },
         ing_id: {
             type: DataTypes.INTEGER,
@@ -27,10 +31,6 @@ Meal.init(
                 key: 'id'
                 }
             },
-        qty_amount: {
-            type: DataTypes.INTEGER,
-            allowNull: false
-            },
         meal_instructions: {
             type: DataTypes.TEXT,
             allowNull: false
@@ -39,6 +39,7 @@ Meal.init(
     {
         sequelize,
         freezeTableName: true,
+        timestamps: false,
         underscored: true,
         modelName: 'meal'
     }

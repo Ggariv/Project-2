@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Quantity extends Model {}
+class Country extends Model {}
 
-Quantity.init(
+Country.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -11,7 +11,7 @@ Quantity.init(
             primaryKey: true,
             autoIncrement: true
             },
-        qty_title: {
+        cty_name: {
             type: DataTypes.STRING,
             allowNull: false
             },
@@ -21,8 +21,8 @@ Quantity.init(
         freezeTableName: true,
         timestamps: false,
         underscored: true,
-        modelName: 'quantity'
+        modelName: 'country'
     }
     )
 
-module.exports = Quantity;
+module.exports = Country;

@@ -1,25 +1,30 @@
 const router = require('express').Router();
-const { RefTable, Meal, Quantity, Ingredient, User } = require('../../models');
+const { RefTable, Meal, Quantity, Ingredient, User, Country } = require('../../models');
 const sequelize = require('../../config/connection');
 // const withAuth = require('../../utils/auth');
 
 // GET all recipes
 router.get('/', (req, res) => {
     RefTable.findAll({
-        attributes: ['id', 'meal_id', 'user_id'],
-        order: [['created_at', 'DESC']],  
+        attributes: ['id', 'meal_id', 'qty_value', 'user_id'], 
         include: [
             {
                 model: Meal,
-                attributes: ['id', 'meal_title', 'meal_country', 'qty_amount', 'meal_instructions'],
-                include: {
+                attributes: ['id', 'meal_title', 'meal_instructions'],
+                include: (
+                    {  
+                    model: Country,
+                    attributes: ['cty_id']
+                    },
+                    {
                     model: Ingredient,
                     attributes: ['ing_id'],
                     include: {
                         model: Quantity,
                         attributes: ['qty_id']
-                        }
-                    },
+                        },
+                    }
+                    )
             },
             {
                 model: User,
@@ -40,19 +45,25 @@ router.get('/:id', (req, res) => {
         where: {
             id: req.params.id
             },
-        attributes: ['id', 'meal_id', 'user_id'],
+        attributes: ['id', 'meal_id', 'qty_value', 'user_id'], 
         include: [
             {
                 model: Meal,
-                attributes: ['id', 'meal_title', 'meal_country', 'qty_amount', 'meal_instructions'],
-                include: {
+                attributes: ['id', 'meal_title', 'meal_instructions'],
+                include: (
+                    {  
+                    model: Country,
+                    attributes: ['cty_id']
+                    },
+                    {
                     model: Ingredient,
                     attributes: ['ing_id'],
                     include: {
                         model: Quantity,
                         attributes: ['qty_id']
-                        }
-                    },
+                        },
+                    }
+                    )
             },
             {
                 model: User,
@@ -77,7 +88,8 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
     RefTable.create({ 
         meal_id: req.body.meal_id,
-        user_id: req.session.user_id
+        qty_value: req.body.qty_value,
+        user_id: req.body.user_id
         })
     .then(dbRecipeData => res.json(dbRecipeData))
     .catch(err => {
@@ -88,10 +100,11 @@ router.post('/', (req, res) => {
 
 // UPDATE a recipe
 router.put('/:id', (req, res) => {
-    Post.update(
+    RefTable.update(
         {
             meal_id: req.body.meal_id,
-            user_id: req.session.user_id
+            qty_value: req.body.qty_value,
+            user_id: req.body.user_id
         },
         {
             where: {
@@ -114,7 +127,7 @@ router.put('/:id', (req, res) => {
 
 // DELETE a recipe
 router.delete('/:id', (req, res) => {
-    Post.destroy({
+    RefTable.destroy({
         where: {
             id: req.params.id 
             }

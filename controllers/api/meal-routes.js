@@ -1,13 +1,15 @@
 const router = require('express').Router();
-const { Meal, Ingredient } = require('../../models');
+const { Meal, Ingredient, Country } = require('../../models');
 // const withAuth = require('../../utils/auth');
 
 // GET all Meals
 router.get('/', (req, res) => {
     Meal.findAll({
-        attributes: ['id', 'meal_title', 'meal_country', 'ing_id', 'qty_amount', 'meal_instructions'],
-        order: [['created_at', 'DESC']],
+        attributes: ['id', 'meal_title', 'cty_id', 'ing_id', 'meal_instructions'],
         include: [
+            {
+                model: Country,
+            },
             {
                 model: Ingredient,
             }
@@ -44,9 +46,8 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
     Meal.create({ 
         meal_title: req.body.meal_title,
-        meal_country: req.body.meal_country,
+        cty_id: req.body.cty_id,
         ing_id: req.body.ing_id,
-        qty_amount: req.body.qty_amount,
         meal_instructions: req.body.meal_instructions,
         })
     .then(dbMealData => res.json(dbMealData))
@@ -61,9 +62,8 @@ router.put('/:id', (req, res) => {
     Meal.update(
         {
             meal_title: req.body.meal_title,
-            meal_country: req.body.meal_country,
+            cty_id: req.body.cty_id,
             ing_id: req.body.ing_id,
-            qty_amount: req.body.qty_amount,
             meal_instructions: req.body.meal_instructions,
         },
         {

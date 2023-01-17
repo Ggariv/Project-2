@@ -1,31 +1,31 @@
 const router = require('express').Router();
-const { Quantity } = require('../../models');
+const { Country } = require('../../models');
 
-// GET all quantities
+// GET all countries
 router.get('/', (req, res) => {
-    Quantity.findAll({
-        attributes: ['id', 'qty_title'], 
+    Country.findAll({
+        attributes: ['id', 'cty_name'],
         })
-    .then(dbQuantityData => res.json(dbQuantityData.reverse()))
+    .then(dbCountryData => res.json(dbCountryData.reverse()))
     .catch(err => {
         console.log(err);
         res.status(500).json(err);
         })
     });
 
-// GET a single quantity
+// GET a single country
 router.get('/:id', (req, res) => {
-    Quantity.findOne({
+    Country.findOne({
         where: {
             id: req.params.id
             },
         })
-    .then(dbQuantityData => {
-        if (!dbQuantityData) {
-            res.status(404).json({ message: 'No user found with this email' });
+    .then(dbCountryData => {
+        if (!dbCountryData) {
+            res.status(404).json({ message: 'No country found in the data' });
             return;
             }
-        res.json(dbQuantityData);
+        res.json(dbCountryData);
         })
     .catch(err => {
         console.log(err);
@@ -35,10 +35,10 @@ router.get('/:id', (req, res) => {
 
 // CREATE a quantity
 router.post('/', (req, res) => {
-    Quantity.create({ 
-        qty_title: req.body.qty_title,
+    Country.create({ 
+        cty_name: req.body.cty_name,
         })
-    .then(dbQuantityData => res.json(dbQuantityData))
+    .then(dbCountryData => res.json(dbCountryData))
     .catch(err => {
         console.log(err);
         res.status(500).json(err); 

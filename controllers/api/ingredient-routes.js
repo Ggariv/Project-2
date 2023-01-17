@@ -6,7 +6,6 @@ const { Ingredient, Quantity } = require('../../models');
 router.get('/', (req, res) => {
     Ingredient.findAll({
         attributes: ['id', 'ing_name', 'qty_id'],
-        order: [['created_at', 'DESC']],
         include: [
             {
                 model: Quantity,
@@ -51,6 +50,32 @@ router.post('/', (req, res) => {
         console.log(err);
         res.status(500).json(err); 
         });
+    });
+
+// UPDATE an Ingredient
+router.put('/:id', (req, res) => {
+    Ingredient.update(
+        {
+            ing_name: req.body.ing_name,
+            qty_id: req.body.qty_id,
+        },
+        {
+            where: {
+                id: req.params.id
+                }
+        }
+        )
+    .then(dbIngredientData => {
+        if (!dbIngredientData) {
+            res.status(404).json({ message: 'No comment found with this id' });
+            return;
+            }
+        res.json(dbIngredientData);
+        })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+        })
     });
 
 // DELETE an Ingredient
