@@ -1,9 +1,9 @@
-const {Model, DataTypes} = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class FavTable extends Model {}
+class Vote extends Model {}
 
-FavTable.init(
+Vote.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -19,21 +19,22 @@ FavTable.init(
                 key: 'id'
                 }
             },
-        fav_id: {
+        meal_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
             references: {
                 model: 'meal',
                 key: 'id'
                 }
-            },
+            }
     },
     {
         sequelize,
+        timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'favtable'
+        modelName: 'vote'
     }
-    )
+    );
 
-module.exports = FavTable;
+module.exports = Vote;

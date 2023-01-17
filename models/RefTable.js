@@ -1,4 +1,4 @@
-const {Model, DataTypes} = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class RefTable extends Model {}
@@ -19,23 +19,11 @@ RefTable.init(
                 key: 'id'
                 }
             },
-        qty_amount: {
-            type: DataTypes.INTEGER,
-            allowNull: false
-            },
-        qty_ID: {
+        user_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
             references: {
-                model: 'quantity',
-                key: 'id'
-                }
-            },
-        ing_ID: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            references: {
-                model: 'ingredient',
+                model: 'user',
                 key: 'id'
                 }
             }
