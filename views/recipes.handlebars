@@ -1,0 +1,12 @@
+{{#if posts.length}}
+<section>
+    <h2>My Recipes</h2>
+        {{#each posts as |post|}}
+        {{> recipes-postinfo post}}
+        {{!-- <a href="/recipes/edit/{{post.id}}">Edit post</a> --}}
+        {{/each}}
+</section>
+{{/if}}
+<button type="submit" class="btn"><a class="link" href="/recipes/new">+ New Post</a></button>
+
+<script src="/javascript/add-recipe.js"></script>
