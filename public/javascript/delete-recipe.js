@@ -3,11 +3,11 @@ async function deleteRecipe(event) {
     const id = window.location.toString().split('/')[
         window.location.toString().split('/').length - 1
         ];
-    const response = await fetch(`/api/meals/${id}`, {
+    const response = await fetch(`/api/recipes/${id}`, {
         method: 'DELETE'
         });
     if (response.ok) {
-        document.location.replace('/dashboard/');
+        document.location.replace('/recipes/');
         } 
     else {
         alert(response.statusText);

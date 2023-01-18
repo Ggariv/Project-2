@@ -16,6 +16,7 @@
 <input type="text" id="i6" class="ing_name" value="Ham"/>,
 <input type="text" id="i7" class="ing_name" value="Pickles"/>,
 
+
 async function postRecipe(event) {
     event.preventDefault();
     const meal_title = document.querySelector('input[name="meal-title"]').value;
@@ -23,7 +24,7 @@ async function postRecipe(event) {
     // const ing_id = //document.querySelector('input[name="ing-id"]').value;
     // const qty_amount = document.querySelector('input[name="qty-amount"]').value;
     const meal_instructions = document.querySelector('input[name="meal-instructions"]').value;
-    const response = await fetch(`/api/meals`, {
+    const response = await fetch(`/api/recipes`, {
         method: 'POST',
         body: JSON.stringify({
             title,
