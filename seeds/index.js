@@ -1,7 +1,5 @@
 const seedUsers = require('./user-seeds');
-const seedQuantity = require('./quantity-seeds');
 const seedIngredient = require('./ingredient-seeds');
-const seedCountry = require('./country-seeds');
 const seedMeal = require('./meal-seeds');
 // const seedRefTable = require('./recipes');
 
@@ -12,12 +10,8 @@ const seedAll = async () => {
     console.log('\n----- DATABASE SYNCED -----\n');
     await seedUsers();
     console.log('\n----- USERS SEEDED -----\n');
-    await seedQuantity();
-    console.log('\n----- QUANTITIES SEEDED -----\n');
     await seedIngredient();
     console.log('\n----- INGREDIENTS SEEDED -----\n');
-    await seedCountry();
-    console.log('\n----- COUNTRIES SEEDED -----\n');
     await seedMeal();
     console.log('\n----- MEALS SEEDED -----\n');
     // await seedRefTable();

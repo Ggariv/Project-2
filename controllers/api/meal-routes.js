@@ -1,19 +1,10 @@
 const router = require('express').Router();
-const { Meal, Ingredient, Country } = require('../../models');
-// const withAuth = require('../../utils/auth');
+const { Meal } = require('../../models');
 
 // GET all Meals
 router.get('/', (req, res) => {
     Meal.findAll({
-        attributes: ['id', 'meal_title', 'cty_id', 'ing_id', 'meal_instructions'],
-        include: [
-            {
-                model: Country,
-            },
-            {
-                model: Ingredient,
-            }
-            ]
+        attributes: ['id', 'meal_title', 'cty_name', 'meal_instructions'],
         })
     .then(dbMealData => res.json(dbMealData.reverse()))
     .catch(err => {
@@ -46,8 +37,7 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
     Meal.create({ 
         meal_title: req.body.meal_title,
-        cty_id: req.body.cty_id,
-        ing_id: req.body.ing_id,
+        cty_name: req.body.cty_name,
         meal_instructions: req.body.meal_instructions,
         })
     .then(dbMealData => res.json(dbMealData))
@@ -62,8 +52,7 @@ router.put('/:id', (req, res) => {
     Meal.update(
         {
             meal_title: req.body.meal_title,
-            cty_id: req.body.cty_id,
-            ing_id: req.body.ing_id,
+            cty_name: req.body.cty_name,
             meal_instructions: req.body.meal_instructions,
         },
         {

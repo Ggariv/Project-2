@@ -15,21 +15,9 @@ Meal.init(
             type: DataTypes.STRING,
             allowNull: false
             },
-        cty_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            references: {
-                model: 'country',
-                key: 'id'
-                }
-            },
-        ing_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            references: {
-                model: 'ingredient',
-                key: 'id'
-                }
+        cty_name: {
+            type: DataTypes.STRING,
+            allowNull: false
             },
         meal_instructions: {
             type: DataTypes.TEXT,

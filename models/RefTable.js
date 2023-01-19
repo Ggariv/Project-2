@@ -19,6 +19,18 @@ RefTable.init(
                 key: 'id'
                 }
             },
+        ing_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: 'ingredient',
+                key: 'id'
+                }
+            },
+        qty_title: {
+            type: DataTypes.STRING,
+            allowNull: false
+            },
         qty_value: {
             type: DataTypes.INTEGER,
             allowNull: false

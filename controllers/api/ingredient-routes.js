@@ -1,16 +1,10 @@
 const router = require('express').Router();
-const { Ingredient, Quantity } = require('../../models');
-// const withAuth = require('../../utils/auth');
+const { Ingredient } = require('../../models');
 
 // GET all Ingredients
 router.get('/', (req, res) => {
     Ingredient.findAll({
-        attributes: ['id', 'ing_name', 'qty_id'],
-        include: [
-            {
-                model: Quantity,
-            },
-            ]
+        attributes: ['id', 'ing_name'],
         })
     .then(dbIngredientData => res.json(dbIngredientData.reverse()))
     .catch(err => {
@@ -57,7 +51,6 @@ router.put('/:id', (req, res) => {
     Ingredient.update(
         {
             ing_name: req.body.ing_name,
-            qty_id: req.body.qty_id,
         },
         {
             where: {

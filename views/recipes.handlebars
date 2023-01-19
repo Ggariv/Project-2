@@ -7,6 +7,24 @@
         {{/each}}
 </section>
 {{/if}}
-<button type="submit" class="btn"><a class="link" href="/recipes/new">+ New Post</a></button>
+
+<div class = "meal_title">
+    <label for="meal_title">Meal Name:</label>
+    <input type="text" id="meal_title"/>
+</div>
+
+<div class="dropdown">
+    <button onclick="addRecipe" class="dropbtn"><a class="link" href="/recipes/new">Add New Recipe</a></button>
+    <a href="#">Country</a>
+    <div id="myDropdown" class="dropdown-content">
+        <a href="#">Ingredient name</a>
+        <a href="#">Quantity</a>
+    </div>
+</div>
+
+<div class = "meal_instructions">
+    <label for="meal_instructions">Instructions:</label>
+    <input type="text" id="meal_instructions"/>
+</div>
 
 <script src="/javascript/add-recipe.js"></script>

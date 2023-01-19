@@ -49,46 +49,53 @@ async function recipeTableHead(table) {
         }
     }
 
-async function recipeTable(table, data, event) {
-    event.preventDefault();
-    // { ref_id: "", meal_title: "", cty_name: "", ing_name: "", qty_title: "", qty_value: "", meal_instructions: "", email: "" }
-    const meal_title = document.querySelector('input[name="meal-title"]').value;
-    const cty_name = document.querySelector('input[name="cty-name"]').value;
-    const ing_name = document.querySelector('input[name="ing_name"]').value;
-    const qty_title = document.querySelector('input[name="qty_title"]').value;
-    const qty_value = document.querySelector('input[name="qty_value"]').value;
-    const meal_instructions = document.querySelector('input[name="meal_instructions"]').value;
-    const email = document.querySelector('input[name="email"]').value;
-    const response = await fetch(`/api/recipes`, {
-        method: 'POST',
-        body: JSON.stringify({
-            meal_title,
-            cty_name,
-            ing_name,
-            qty_title,
-            qty_value,
-            meal_instructions,
-            email
-            }),
-        headers: {
-            'Content-Type': 'application/json'
-            }
-        });
-    if (response.ok) {
-        document.location.replace('/recipes');
-        } 
-    else {
-        alert(response.statusText);
-        }
-    for (let element of data) {
-        let row = table.insertRow();
-        for (key in element) {
-        let cell = row.insertCell();
-        let text = document.createTextNode(element[key]);
-        cell.appendChild(text);
-        }
-        }
+async function recipeTable() {
+    document.getElementByClass('ing_name').value;
+    document.getElementByClass('qty_title').value;
+    document.getElementByClass('cty_name').value;
+    
     }
+
+// async function recipeTable(table, data, event) {
+//     event.preventDefault();
+//     // { ref_id: "", meal_title: "", cty_name: "", ing_name: "", qty_title: "", qty_value: "", meal_instructions: "", email: "" }
+//     const meal_title = document.querySelector('input[name="meal-title"]').value;
+//     const cty_name = document.querySelector('input[name="cty-name"]').value;
+//     const ing_name = document.querySelector('input[name="ing_name"]').value;
+//     const qty_title = document.querySelector('input[name="qty_title"]').value;
+//     const qty_value = document.querySelector('input[name="qty_value"]').value;
+//     const meal_instructions = document.querySelector('input[name="meal_instructions"]').value;
+//     const email = document.querySelector('input[name="email"]').value;
+//     const response = await fetch(`/api/recipes`, {
+//         method: 'POST',
+//         body: JSON.stringify({
+//             meal_title,
+//             cty_name,
+//             ing_name,
+//             qty_title,
+//             qty_value,
+//             meal_instructions,
+//             email
+//             }),
+//         headers: {
+//             'Content-Type': 'application/json'
+//             }
+//         });
+//     if (response.ok) {
+//         document.location.replace('/recipes');
+//         } 
+//     else {
+//         alert(response.statusText);
+//         }
+//     for (let element of data) {
+//         let row = table.insertRow();
+//         for (key in element) {
+//         let cell = row.insertCell();
+//         let text = document.createTextNode(element[key]);
+//         cell.appendChild(text);
+//         }
+//         }
+//     }
 
 // async function postRecipe(table, data, event) {
 //     event.preventDefault();
