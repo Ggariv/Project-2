@@ -4,7 +4,7 @@ const { Meal } = require('../../models');
 // GET all Meals
 router.get('/', (req, res) => {
     Meal.findAll({
-        attributes: ['id', 'meal_title', 'cty_name', 'meal_instructions'],
+        attributes: ['id', 'meal_title', 'meal_img', 'cty_name', 'meal_instructions', 'views'],
         })
     .then(dbMealData => res.json(dbMealData.reverse()))
     .catch(err => {
@@ -37,8 +37,10 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
     Meal.create({ 
         meal_title: req.body.meal_title,
+        meal_img: req.body.meal_img,
         cty_name: req.body.cty_name,
         meal_instructions: req.body.meal_instructions,
+        views: req.body.views,
         })
     .then(dbMealData => res.json(dbMealData))
     .catch(err => {
@@ -52,8 +54,10 @@ router.put('/:id', (req, res) => {
     Meal.update(
         {
             meal_title: req.body.meal_title,
+            meal_img: req.body.meal_img,
             cty_name: req.body.cty_name,
             meal_instructions: req.body.meal_instructions,
+            views: req.body.views,
         },
         {
             where: {

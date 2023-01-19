@@ -4,7 +4,7 @@ const { Ingredient } = require('../../models');
 // GET all Ingredients
 router.get('/', (req, res) => {
     Ingredient.findAll({
-        attributes: ['id', 'ing_name'],
+        attributes: ['id', 'ing_name', 'ing_img'],
         })
     .then(dbIngredientData => res.json(dbIngredientData.reverse()))
     .catch(err => {
@@ -37,7 +37,7 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
     Ingredient.create({ 
         ing_name: req.body.ing_name,
-        qty_id: req.body.qty_id,
+        ing_img: req.body.ing_img,
         })
     .then(dbIngredientData => res.json(dbIngredientData))
     .catch(err => {
@@ -51,6 +51,7 @@ router.put('/:id', (req, res) => {
     Ingredient.update(
         {
             ing_name: req.body.ing_name,
+            ing_img: req.body.ing_img,
         },
         {
             where: {

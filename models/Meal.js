@@ -15,12 +15,20 @@ Meal.init(
             type: DataTypes.STRING,
             allowNull: false
             },
+        meal_img: {
+            type: DataTypes.STRING,
+            allowNull: false
+            },
         cty_name: {
             type: DataTypes.STRING,
             allowNull: false
             },
         meal_instructions: {
             type: DataTypes.TEXT,
+            allowNull: false
+            },
+        views: {
+            type: DataTypes.INTEGER,
             allowNull: false
             }
     },

@@ -15,6 +15,10 @@ Ingredient.init(
             type: DataTypes.STRING,
             allowNull: false
             },
+        ing_img: {
+            type: DataTypes.STRING,
+            allowNull: false
+            },
     },
     {
         sequelize,
