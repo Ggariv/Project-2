@@ -11,7 +11,7 @@ Writing about tech can be just as important as making it. Developers spend plent
 ## Link Access
 Access to the Heroku app through the [following link](https://dashboard.heroku.com/apps/food-tracker-be)
 
-Access to the Heroku site through the [following link](https://food-tracker-be.herokuapp.com/)
+Access to the Heroku domain through the [following link](https://food-tracker-be.herokuapp.com/)
 
 ## User Story
 
