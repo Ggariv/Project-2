@@ -13,11 +13,11 @@ RefTable.belongsTo(User, {
     })
 
 // RefTable <--> Meal
-RefTable.hasMany(Meal, {
+Meal.hasOne(RefTable, {
     foreignKey: 'meal_id'
     });
 
-Meal.belongsTo(RefTable, {
+RefTable.belongsTo(Meal, {
     foreignKey: 'meal_id'
     })
 
@@ -26,7 +26,7 @@ RefTable.hasMany(Ingredient, {
     foreignKey: 'ing_id'
     });
 
-RefTable.belongsTo(Meal, {
+Ingredient.belongsTo(RefTable, {
     foreignKey: 'ing_id'
     });
 

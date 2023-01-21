@@ -10,14 +10,12 @@ const sess = {
     saveUninitialized: true,
     };
 
-
 // handlebars
 const exphbs = require('express-handlebars');
 const hbs = exphbs.create({ helpers });
 
 // Tailwind
 const tailwind = require('tailwind');
-
 
 const app = express();
 const PORT = process.env.PORT || 3001;

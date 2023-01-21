@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Meal } = require('../../models');
+const { Meal, RefTable, Ingredient } = require('../../models/index');
 
 // GET all Meals
 router.get('/', (req, res) => {
@@ -97,5 +97,25 @@ router.delete('/:id', (req, res) => {
         res.status(500).json(err);
         })
     });
+
+// Meal routes
+const getMeal = (req, res) => {
+    Meal.findByPk(req.params.id, {
+        include: {
+            model: RefTable,
+            },
+            })
+        .then((result) => {
+        res.status(200).send(result);
+        //const mealId = result.meal_id;
+        //console.log(result);
+
+        // meal_ing_ref.findAll(mealId).then((result) => {
+        //   console.log(result);
+        // });
+        });
+    };
+
+router.route('/aa/:id').get(getMeal);
 
 module.exports = router;
