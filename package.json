@@ -4,6 +4,7 @@
   "description": "Everyone is always looking to try something new. At internet, you can search for new recipes all over the world and try to cook it by your own.\r However, as many food platforms offer their multiple dishes to the users, users would like to submit their own recipe to a platform so that other users would try new dishes from new sources.",
   "main": "server.js",
   "scripts": {
+    "dev": "npx tailwindcss -i ./public/css/style.css -o ./public/css/tailwind.css --watch",
     "test": "jest",
     "start": "node server.js",
     "watch": "nodemon server.js",
@@ -20,7 +21,8 @@
   },
   "homepage": "https://github.com/Ggariv/Project-2#readme",
   "devDependencies": {
-    "jest": "^29.3.1"
+    "jest": "^29.3.1",
+    "tailwindcss": "^3.2.4"
   },
   "dependencies": {
     "bcrypt": "^5.1.0",

@@ -10,12 +10,18 @@ const sess = {
     saveUninitialized: true,
     };
 
-// // handlebars
+
+// handlebars
 const exphbs = require('express-handlebars');
 const hbs = exphbs.create({ helpers });
 
+// Tailwind
+const tailwind = require('tailwind');
+
+
 const app = express();
 const PORT = process.env.PORT || 3001;
+
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
@@ -24,6 +30,7 @@ app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 app.use(session(sess));
 app.use(routes);
+
 
 // turn on connection to db and server
 sequelize.sync({ alter: true }).then(() => {

@@ -1,30 +1,47 @@
-{{#if posts.length}}
+<form class="new-meal-form">
+    <h3>Add new Recipe</h3>
+    <div class="meal-data">
+        <div class = "meal_title">
+            <label for="meal_title">Meal Name:</label>
+            <input type="text" id="meal_title"/>
+        </div>
+
+        <div class = "meal_img">
+            <label for="meal_img">Image Link:</label>
+            <input type="text" id="meal_img"/>
+        </div>
+    </div>
+
+    <div class="dropdown">
+        <div id="myDropdown" class="dropdown-content">
+            <a href="#">Country</a>
+            <a href="#">Ingredient name</a>
+            <a href="#">Quantity (value)</a>
+            <a href="#">Quantity (unit)</a>
+        </div>
+    </div>
+
+    <div class = "meal_instructions">
+        <label for="meal_instructions">Instructions:</label>
+        <input type="text" id="meal_instructions"/>
+    </div>
+
+    <button type="submit" class="btn">Submit Recipe</button>
+</form>
+
+{{#if recipes.length}}
 <section>
     <h2>My Recipes</h2>
-        {{#each posts as |post|}}
-        {{> recipes-postinfo post}}
-        {{!-- <a href="/recipes/edit/{{post.id}}">Edit post</a> --}}
+    <ol>
+        {{#each recipes as |recipe|}}
+        <li>
+            {{> recipe-info recipe}}
+            <a href="/recipes/edit/{{recipes.id}}" class="edit-link">Edit Recipe</a>
+        </li>
         {{/each}}
+    </ol>
 </section>
 {{/if}}
 
-<div class = "meal_title">
-    <label for="meal_title">Meal Name:</label>
-    <input type="text" id="meal_title"/>
-</div>
-
-<div class="dropdown">
-    <button onclick="addRecipe" class="dropbtn"><a class="link" href="/recipes/new">Add New Recipe</a></button>
-    <a href="#">Country</a>
-    <div id="myDropdown" class="dropdown-content">
-        <a href="#">Ingredient name</a>
-        <a href="#">Quantity</a>
-    </div>
-</div>
-
-<div class = "meal_instructions">
-    <label for="meal_instructions">Instructions:</label>
-    <input type="text" id="meal_instructions"/>
-</div>
 
 <script src="/javascript/add-recipe.js"></script>
