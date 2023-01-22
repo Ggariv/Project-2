@@ -13,6 +13,13 @@ Access to the Heroku app through the [following link](https://dashboard.heroku.c
 
 Access to the Heroku domain through the [following link](https://food-tracker-be.herokuapp.com/)
 
+## Videos
+Access to the initial setup video through the [following link](https://drive.google.com/file/d/155YcC-WDXcEM8CRupS688mNvtI70UKW1/view?usp=sharing)
+
+Access to the function test video through the [following link](https://drive.google.com/file/d/12odRXKQ0NJPLfHLSN-MwmJO4jlyff85N/view?usp=sharing)
+
+Access to the online test through the [following link](https://drive.google.com/file/d/1SCzomw9O3ainJR9Bw1GzIdMdvVe1hY6t/view?usp=sharing)
+
 ## User Story
 
 ```
